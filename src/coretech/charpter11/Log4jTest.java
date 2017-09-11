@@ -78,6 +78,10 @@ public class Log4jTest {
         } catch (FileNotFoundException e) {
             // TODO: handle exception
             Log4jTest log4jTest = new Log4jTest();
+            /**
+             * When I want to config this log system to log my logs into specific file, I can config it as follow:
+             * Otherwise, it will log into the default file as the default Log4jTest constructor.
+             */
             String selfConfPath = "C:\\Users\\i324167\\uiworkspace\\self-learning\\src\\coretech\\charpter11\\testConflog.json";
             log4jTest.config(selfConfPath);
             log4jTest.error("just for a test", e);
