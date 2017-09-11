@@ -6,6 +6,10 @@ import java.io.IOException;
 
 import sun.misc.ProxyGenerator;
 
+/**
+ * Try the Exercise: http://blog.csdn.net/zhangerqing/article/details/42504281/
+ */
+
 public class DynamicProxyTest {
 
     public static void main(String[] args) {
