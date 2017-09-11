@@ -10,13 +10,31 @@ import java.nio.channels.FileChannel;
  * Try to implement log system. Just one error method and write to file for now.
  */
 public class Log4jTest {
+    private String logFilePath;
+
+    public Log4jTest() {
+        super();
+        this.logFilePath = "C:\\Users\\i324167\\uiworkspace\\self-learning\\src\\coretech\\charpter11\\testlog.json";
+    }
+
+    public String getLogFilePath() {
+        return logFilePath;
+    }
+
+    public void setLogFilePath(String logFilePath) {
+        this.logFilePath = logFilePath;
+    }
+
+    public void config(String logFilePath) {
+        setLogFilePath(logFilePath);
+    }
+
     public void error(String message, Throwable e) {
         LogEntity logEntity = new LogEntity(LogLevel.ERROR, message, e);
-        String path = "C:\\Users\\i324167\\uiworkspace\\self-learning\\src\\coretech\\charpter11\\testlog.json";
         FileOutputStream out = null;
 
         try {
-            out = new FileOutputStream(path, true);
+            out = new FileOutputStream(logFilePath, true);
             FileChannel curChannel = out.getChannel();
             long curPos = curChannel.position();
             if (curPos == 0) {
@@ -60,6 +78,8 @@ public class Log4jTest {
         } catch (FileNotFoundException e) {
             // TODO: handle exception
             Log4jTest log4jTest = new Log4jTest();
+            String selfConfPath = "C:\\Users\\i324167\\uiworkspace\\self-learning\\src\\coretech\\charpter11\\testConflog.json";
+            log4jTest.config(selfConfPath);
             log4jTest.error("just for a test", e);
         } finally {
             try {

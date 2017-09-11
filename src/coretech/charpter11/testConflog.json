@@ -1,0 +1,13 @@
+[{
+	"level":"ERROR",
+	"time":"Mon Sep 11 14:54:51 CST 2017",
+	"message":"just for a test",
+	"exception":"java.io.FileNotFoundException C:\\Users\\i324167\\uiworkspace\\self-learning\\src\\coretech\\charpter11 (Access is denied)",
+	"stackTrace":[
+		"java.io.FileOutputStream.open0(Native Method)",
+		"java.io.FileOutputStream.open(FileOutputStream.java:270)",
+		"java.io.FileOutputStream.<init>(FileOutputStream.java:213)",
+		"java.io.FileOutputStream.<init>(FileOutputStream.java:101)",
+		"coretech.charpter11.Log4jTest.main(Log4jTest.java:77)"
+	]
+}]
