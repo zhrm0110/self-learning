@@ -14,7 +14,12 @@ public class ConsumerController {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add() {
+        /**
+         * Here please note that: In case encounter "No instances available for COMPUTE-SERVICE" error, switch of your
+         * fire wall and try to access the consumer /add api again.
+         */
         return restTemplate.getForEntity("http://compute-service/add?a=10&b=20", String.class).getBody();
+
     }
 
 }
