@@ -1,6 +1,7 @@
 package com.rina.exercise.controller;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,27 @@ public class ComputeController {
             return r;
         }
         return null;
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello(Locale locale) {
+        // Locale locale = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest()
+        // .getLocale();
+        if (locale.equals(Locale.GERMAN)) {
+            logger.info(locale);
+            return "Hello German";
+        } else if (locale.equals(Locale.ENGLISH)) {
+            logger.info(locale);
+            return "Hello English";
+        } else if (locale.equals(Locale.CHINESE)) {
+            logger.info(locale);
+            return "Hello China";
+        } else if (locale.equals(Locale.JAPANESE)) {
+            logger.info(locale);
+            return "Hello Japan";
+        } else {
+            logger.info(locale);
+            return "Hello Default";
+        }
     }
 }
